@@ -28,4 +28,14 @@ public class UserDAO {
     }
     return state;
 }
+    public int login1 (String user,String cel, String pass1,String pass){
+     
+    int state = -1;
+    if (pass1.equals(pass)) {
+        state = 1;
+    } else {
+        state = 0;
+    }
+    return state;
+}
 }

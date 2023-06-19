@@ -29,7 +29,7 @@ import javafx.stage.Window;
 import javafx.stage.WindowEvent;
 import javax.swing.JOptionPane;
 import model.UserDAO;
-
+import model.ConnectionPoolMySQL;
 /**
  * FXML Controller class
  *
@@ -41,10 +41,18 @@ public class ViewLoginController implements Initializable {
     
     @FXML
     private TextField txtUser;
-    
+       
+    @FXML
+    private TextField txtUser1;
+        
+    @FXML
+    private TextField txtUser1_;
     @FXML
     private PasswordField txtPassword;
-    
+    @FXML
+    private PasswordField txtPassword1;
+    @FXML
+    private PasswordField txtPassword1_;
     @FXML
     private Button btnLogin;
     @FXML
@@ -76,6 +84,40 @@ public class ViewLoginController implements Initializable {
         
         }
         
+        
+        
+    }
+     @FXML
+    private void eventKey1(KeyEvent event){
+        
+        Object evt = event.getSource();
+        
+        if(evt.equals(txtUser1)){
+            
+            if(event.getCharacter().equals(" ")){
+                event.consume();
+            }
+        
+        }else if(evt.equals(txtPassword1)){
+
+            if(event.getCharacter().equals(" ")){
+                event.consume();
+            }            
+        
+        }
+                if(evt.equals(txtUser1_)){
+            
+            if(event.getCharacter().equals(" ")){
+                event.consume();
+            }
+        
+        }else if(evt.equals(txtPassword1_)){
+
+            if(event.getCharacter().equals(" ")){
+                event.consume();
+            }            
+        
+        }
         
         
     }
@@ -139,20 +181,48 @@ public class ViewLoginController implements Initializable {
                     }
                     }              
     
-            @FXML
+    @FXML
     private void codi(ActionEvent event){
-       
-    Object evt = event.getSource();
+        
+        Object evt = event.getSource();
 
         if(evt.equals(cod)){
                                 
-       
+            if(!txtUser1.getText().isEmpty() &&!txtUser1_.getText().isEmpty() &&!txtPassword1_.getText().isEmpty() && !txtPassword1.getText().isEmpty()){
+            
+                String user = txtUser1.getText();
+                 String cel = txtUser1_.getText();
+                String pass = txtPassword1.getText();
+                String pass1= txtPassword1_.getText();
+                int state = model.login1(user, cel, pass1, pass);
+                
+                  ConnectionPoolMySQL.addDataToList(user, cel, pass, pass1);
+            ConnectionPoolMySQL.addDataToStack(user, cel, pass, pass1);
+                if(state!=-1){
 
-                      
+                    if(state == 1){
+
+                        JOptionPane.showMessageDialog(null, "cuenta creada");
                         
                         loadStage("/view/ViewCreate_1.fxml", event);
+
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Error al crear cuenta intente nuevamente", 
+                                                            "ADVERTENCIA", JOptionPane.WARNING_MESSAGE);                
                     }
-                    }              
+
+                }                
+
+            
+            }else{            
+                    JOptionPane.showMessageDialog(null, "Error al crear cuenta intente nuevamente", 
+                                                        "ADVERTENCIA", JOptionPane.WARNING_MESSAGE);                                
+            }
+        
+        }
+    
+    }
+        
     
     @FXML
     private void eventAction(ActionEvent event){
