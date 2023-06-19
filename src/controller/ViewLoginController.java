@@ -30,6 +30,7 @@ import javafx.stage.WindowEvent;
 import javax.swing.JOptionPane;
 import model.UserDAO;
 import model.ConnectionPoolMySQL;
+
 /**
  * FXML Controller class
  *
@@ -181,49 +182,43 @@ public class ViewLoginController implements Initializable {
                     }
                     }              
     
-    @FXML
-    private void codi(ActionEvent event){
-        
-        Object evt = event.getSource();
+   @FXML
+private void codi(ActionEvent event) {
+    Object evt = event.getSource();
 
-        if(evt.equals(cod)){
-                                
-            if(!txtUser1.getText().isEmpty() &&!txtUser1_.getText().isEmpty() &&!txtPassword1_.getText().isEmpty() && !txtPassword1.getText().isEmpty()){
-            
-                String user = txtUser1.getText();
-                 String cel = txtUser1_.getText();
-                String pass = txtPassword1.getText();
-                String pass1= txtPassword1_.getText();
-                int state = model.login1(user, cel, pass1, pass);
+    if (evt.equals(cod)) {
+        if (!txtUser1.getText().isEmpty() && !txtUser1_.getText().isEmpty()
+                && !txtPassword1.getText().isEmpty() && !txtPassword1_.getText().isEmpty()) {
+
+            String user = txtUser1.getText();
+            String cel = txtUser1_.getText();
+            String pass = txtPassword1.getText();
+            String pass1 = txtPassword1_.getText();
+            int state = model.login1(user, cel, pass1, pass);
+       boolean celt = model.verificarNumeroRepetido(cel);
+            if (state != -1) {
                 
-                  ConnectionPoolMySQL.addDataToList(user, cel, pass, pass1);
-            ConnectionPoolMySQL.addDataToStack(user, cel, pass, pass1);
-                if(state!=-1){
+                if (state == 1) {
+                    if(celt==true)
+                    JOptionPane.showMessageDialog(null, "Cuenta creada");
+                    loadStage("/view/ViewCreate_1.fxml", event);
 
-                    if(state == 1){
-
-                        JOptionPane.showMessageDialog(null, "cuenta creada");
-                        
-                        loadStage("/view/ViewCreate_1.fxml", event);
-
-                    }else{
-                        JOptionPane.showMessageDialog(null, "Error al crear cuenta intente nuevamente", 
-                                                            "ADVERTENCIA", JOptionPane.WARNING_MESSAGE);                
-                    }
-
-                }                
-
-            
-            }else{            
-                    JOptionPane.showMessageDialog(null, "Error al crear cuenta intente nuevamente", 
-                                                        "ADVERTENCIA", JOptionPane.WARNING_MESSAGE);                                
+                    ConnectionPoolMySQL connectionPool = new ConnectionPoolMySQL();
+                    connectionPool.addDataToList(user, cel, pass, pass1);
+                    connectionPool.addDataToStack(user, cel, pass, pass1);
+                    connectionPool.setRegistrarArchivo(user, cel, pass, pass1);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error al crear la cuenta, intente nuevamente",
+                            "ADVERTENCIA", JOptionPane.WARNING_MESSAGE);
+                }
             }
-        
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al crear la cuenta, intente nuevamente",
+                    "ADVERTENCIA", JOptionPane.WARNING_MESSAGE);
         }
-    
     }
-        
-    
+}
+
     @FXML
     private void eventAction(ActionEvent event){
         

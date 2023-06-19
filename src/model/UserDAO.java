@@ -6,6 +6,9 @@
 package model;
 
 import java.awt.HeadlessException;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -28,8 +31,7 @@ public class UserDAO {
     }
     return state;
 }
-    public int login1 (String user,String cel, String pass1,String pass){
-     
+    public int login1(String user, String cel, String pass1, String pass) {
     int state = -1;
     if (pass1.equals(pass)) {
         state = 1;
@@ -38,4 +40,31 @@ public class UserDAO {
     }
     return state;
 }
+
+    public boolean verificarNumeroRepetido(String numero) {
+    boolean repetido = false;
+
+    try {
+        File archivo = new File("C:\\Users\\Usuario\\Music\\Nueva carpeta.txt");
+        FileReader fr = new FileReader(archivo);
+        BufferedReader br = new BufferedReader(fr);
+
+        String linea;
+
+        while ((linea = br.readLine()) != null) {
+            if (linea.contains("Cel: " + numero)) {
+                repetido = true;
+                break;
+            }
+        }
+
+        br.close();
+        fr.close();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+
+    return repetido;
+}
+
 }

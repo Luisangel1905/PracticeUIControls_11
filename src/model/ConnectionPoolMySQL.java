@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.Stack;
 import javax.swing.JOptionPane;
+import model.ConnectionPoolMySQL;
 
 public class ConnectionPoolMySQL {
     private static DoublyLinkedList dataList = new DoublyLinkedList();
@@ -27,7 +28,7 @@ public class ConnectionPoolMySQL {
         PrintWriter pw = null;
 
         try {
-            fichero = new FileWriter("C:/Prueba/prueba.txt");
+            fichero = new FileWriter("C:\\Users\\Usuario\\Music\\Nueva carpeta.txt");
             pw = new PrintWriter(fichero);
 
             if (user == null || user.isEmpty() || cel == null || cel.isEmpty() ||
@@ -59,7 +60,7 @@ public class ConnectionPoolMySQL {
         BufferedReader br = null;
 
         try {
-            archivo = new File("C:/Prueba/prueba.txt");
+            archivo = new File("C:\\Users\\Usuario\\Music\\Nueva carpeta.txt");
             fr = new FileReader(archivo);
             br = new BufferedReader(fr);
 
