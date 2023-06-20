@@ -59,6 +59,10 @@ public class ViewLoginController implements Initializable {
     @FXML
     private Button ing;
     @FXML
+    private Button fin;
+    @FXML
+    private Button cam;
+    @FXML
     private Button vol;
      @FXML
     private Button crea;
@@ -136,6 +140,34 @@ public class ViewLoginController implements Initializable {
                         loadStage("/view/ViewLogin.fxml", event);
                     }
     }
+     @FXML
+    private void finc(ActionEvent event){
+        
+    Object evt = event.getSource();
+
+        if(evt.equals(fin)){
+                                
+       
+
+                      
+                        
+                        loadStage("/view/ViewFin.fxml", event);
+                    }
+    }
+     @FXML
+    private void camb(ActionEvent event){
+        
+    Object evt = event.getSource();
+
+        if(evt.equals(cam)){
+                                
+       
+
+                      
+                        
+                        loadStage("/view/ViewCreate.fxml", event);
+                    }
+    }
     @FXML
     private void volver(ActionEvent event){
         
@@ -195,18 +227,21 @@ private void codi(ActionEvent event) {
             String pass = txtPassword1.getText();
             String pass1 = txtPassword1_.getText();
             int state = model.login1(user, cel, pass1, pass);
-       boolean celt = model.verificarNumeroRepetido(cel);
+       
+        
             if (state != -1) {
                 
                 if (state == 1) {
-                    if(celt==true)
-                    JOptionPane.showMessageDialog(null, "Cuenta creada");
-                    loadStage("/view/ViewCreate_1.fxml", event);
-
-                    ConnectionPoolMySQL connectionPool = new ConnectionPoolMySQL();
+                    
+                  
+                    
+         ConnectionPoolMySQL connectionPool = new ConnectionPoolMySQL();
                     connectionPool.addDataToList(user, cel, pass, pass1);
                     connectionPool.addDataToStack(user, cel, pass, pass1);
                     connectionPool.setRegistrarArchivo(user, cel, pass, pass1);
+                    JOptionPane.showMessageDialog(null, "Cuenta creada");
+                    loadStage("/view/ViewCreate_1.fxml", event);
+
                 } else {
                     JOptionPane.showMessageDialog(null, "Error al crear la cuenta, intente nuevamente",
                             "ADVERTENCIA", JOptionPane.WARNING_MESSAGE);
@@ -230,7 +265,7 @@ private void codi(ActionEvent event) {
             
                 String user = txtUser.getText();
                 String pass = txtPassword.getText();
-                
+             
                 int state = model.login(user, pass);
                 
                 if(state!=-1){

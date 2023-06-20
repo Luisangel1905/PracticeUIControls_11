@@ -23,6 +23,10 @@ public class ConnectionPoolMySQL {
         dataStack.push(data);
     }
 
+    static DoublyLinkedList getDataList() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     public void setRegistrarArchivo(String user, String cel, String pass, String pass1) {
         FileWriter fichero = null;
         PrintWriter pw = null;
@@ -89,4 +93,7 @@ public class ConnectionPoolMySQL {
             }
         }
     }
+   
+
+
 }

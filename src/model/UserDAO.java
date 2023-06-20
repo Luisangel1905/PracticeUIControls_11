@@ -13,6 +13,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -40,28 +41,19 @@ public class UserDAO {
     }
     return state;
 }
+public boolean verificarNumeroRepetido(String numero) {
+    ConnectionPoolMySQL connectionPool = new ConnectionPoolMySQL();
+    connectionPool.getInfoArchivo();
+    DoublyLinkedList dataList = ConnectionPoolMySQL.getDataList();
 
-    public boolean verificarNumeroRepetido(String numero) {
     boolean repetido = false;
 
-    try {
-        File archivo = new File("C:\\Users\\Usuario\\Music\\Nueva carpeta.txt");
-        FileReader fr = new FileReader(archivo);
-        BufferedReader br = new BufferedReader(fr);
-
-        String linea;
-
-        while ((linea = br.readLine()) != null) {
-            if (linea.contains("Cel: " + numero)) {
-                repetido = true;
-                break;
-            }
+    for (int i = 0; i < dataList.getSize(); i++) {
+        String data = dataList.get(i);
+        if (data.contains("Cel: " + numero)) {
+            repetido = true;
+            break;
         }
-
-        br.close();
-        fr.close();
-    } catch (Exception e) {
-        e.printStackTrace();
     }
 
     return repetido;

@@ -13,6 +13,10 @@ class DoublyLinkedList {
     private Node tail;
     private int size;
 
+    String get(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     private class Node {
         private String data;
         private Node prev;
