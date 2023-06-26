@@ -42,7 +42,9 @@ public class ViewLoginController implements Initializable {
     
     @FXML
     private TextField txtUser;
-       
+      @FXML
+    private TextField  tex1,tex2,tex3,tex4;
+     
     @FXML
     private TextField txtUser1;
         
@@ -66,6 +68,8 @@ public class ViewLoginController implements Initializable {
     private Button cam;
     @FXML
     private Button vol;
+     @FXML
+    private Button ubi;
      @FXML
     private Button crea;
       @FXML
@@ -167,6 +171,20 @@ public class ViewLoginController implements Initializable {
                       
                         
                         loadStage("/view/ViewPrincipal.fxml", event);
+                    }
+    }
+     @FXML
+    private void ubi(ActionEvent event){
+        
+    Object evt = event.getSource();
+
+        if(evt.equals(ubi)){
+                                
+       
+
+                      
+                        
+                        loadStage("/view/ubi.fxml", event);
                     }
     }
      @FXML

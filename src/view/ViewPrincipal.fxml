@@ -8,14 +8,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="713.0" prefWidth="605.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewLoginController">
    <children>
-      <ImageView fitHeight="96.0" fitWidth="156.0" layoutX="-29.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="-29.0">
+      <ImageView fitHeight="78.0" fitWidth="147.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0">
          <image>
-            <Image url="@../images/logo_1.png" />
+            <Image url="@../images/logoP.png" />
          </image>
       </ImageView>
       
       <Button fx:id="ing" layoutX="307.0" layoutY="66.0" mnemonicParsing="false" onAction="#P" text="Ingresar" AnchorPane.rightAnchor="235.0" />
-      <Button layoutX="382.0" layoutY="66.0" mnemonicParsing="false" text="Registrar ubicacion" AnchorPane.rightAnchor="95.0" />
+      <Button fx:id="ubi" layoutX="382.0" layoutY="66.0" mnemonicParsing="false" onAction="#ubi" text="Registrar ubicacion" AnchorPane.rightAnchor="95.0" />
       <Button fx:id="crea" layoutX="206.0" layoutY="66.0" mnemonicParsing="false" onAction="#creaT" text="crear cuenta" AnchorPane.leftAnchor="206.0" />
       <ImageView fitHeight="113.0" fitWidth="593.0" layoutX="14.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="7.16668701171875">
          <image>
