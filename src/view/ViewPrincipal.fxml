@@ -15,7 +15,7 @@
       </ImageView>
       
       <Button fx:id="ing" layoutX="307.0" layoutY="66.0" mnemonicParsing="false" onAction="#P" text="Ingresar" AnchorPane.rightAnchor="235.0" />
-      <Button fx:id="ubi" layoutX="382.0" layoutY="66.0" mnemonicParsing="false" onAction="#ubi" text="Registrar ubicacion" AnchorPane.rightAnchor="95.0" />
+      <Button fx:id="ubi" layoutX="382.0" layoutY="66.0" mnemonicParsing="false" onAction="#ubi1" text="Registrar ubicacion" AnchorPane.rightAnchor="95.0" />
       <Button fx:id="crea" layoutX="206.0" layoutY="66.0" mnemonicParsing="false" onAction="#creaT" text="crear cuenta" AnchorPane.leftAnchor="206.0" />
       <ImageView fitHeight="113.0" fitWidth="593.0" layoutX="14.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="7.16668701171875">
          <image>
@@ -26,10 +26,10 @@
             <Image url="@../images/Principal.png" />
          </image>
       </ImageView>
-      <Button layoutX="37.0" layoutY="570.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="156.0" text="Agregar" textFill="#fc9b00" />
-      <Button layoutX="226.0" layoutY="570.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="156.0" text="Agregar" textFill="#fc9b00" />
-      <Button layoutX="414.0" layoutY="570.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="156.0" text="Agregar" textFill="#fc9b00" />
+      <Button fx:id="agre" layoutX="414.0" layoutY="570.0" mnemonicParsing="false" onAction="#agre1" prefHeight="50.0" prefWidth="156.0" text="Agregar" textFill="#fc9b00" />
       <TextField layoutX="155.0" layoutY="30.0" prefHeight="26.0" prefWidth="368.0" />
+      <Button fx:id="agre1" layoutX="225.0" layoutY="570.0" mnemonicParsing="false" onAction="#agre1" prefHeight="50.0" prefWidth="156.0" text="Agregar" textFill="#fc9b00" />
+      <Button fx:id="agre2" layoutX="38.0" layoutY="570.0" mnemonicParsing="false" onAction="#agre1" prefHeight="50.0" prefWidth="156.0" text="Agregar" textFill="#fc9b00" />
       
    </children>
 </AnchorPane>

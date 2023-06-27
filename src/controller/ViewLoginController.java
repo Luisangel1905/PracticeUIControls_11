@@ -43,7 +43,13 @@ public class ViewLoginController implements Initializable {
     @FXML
     private TextField txtUser;
       @FXML
-    private TextField  tex1,tex2,tex3,tex4;
+    private TextField  tex1;
+                @FXML
+    private TextField tex2;
+              @FXML
+    private TextField tex3;
+              @FXML
+    private TextField tex4;
      
     @FXML
     private TextField txtUser1;
@@ -70,6 +76,8 @@ public class ViewLoginController implements Initializable {
     private Button vol;
      @FXML
     private Button ubi;
+         @FXML
+    private Button agre,agre1,agre2;
      @FXML
     private Button crea;
       @FXML
@@ -174,7 +182,7 @@ public class ViewLoginController implements Initializable {
                     }
     }
      @FXML
-    private void ubi(ActionEvent event){
+    private void ubi1(ActionEvent event){
         
     Object evt = event.getSource();
 
@@ -184,10 +192,40 @@ public class ViewLoginController implements Initializable {
 
                       
                         
-                        loadStage("/view/ubi.fxml", event);
+                        loadStage("/view/Viewubi.fxml", event);
                     }
     }
-     @FXML
+       @FXML
+    private void agre1(ActionEvent event){
+        
+    Object evt = event.getSource();
+
+        if(evt.equals(agre)){
+                                
+       
+
+                      
+                        
+                        loadStage("/view/Viewagre.fxml", event);
+        }
+         if(evt.equals(agre1)){
+                                
+       
+
+                      
+                        
+                        loadStage("/view/Viewagre.fxml", event);
+        }
+         if(evt.equals(agre2)){
+                                
+       
+
+                      
+                        
+                        loadStage("/view/Viewagre.fxml", event);
+        }
+    }
+    @FXML
     private void camb(ActionEvent event){
         
     Object evt = event.getSource();

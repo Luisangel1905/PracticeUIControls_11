@@ -7,7 +7,6 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.Stack;
 import javax.swing.JOptionPane;
-import model.ConnectionPoolMySQL;
 
 public class ConnectionPoolMySQL {
     private static DoublyLinkedList dataList = new DoublyLinkedList();
@@ -23,8 +22,8 @@ public class ConnectionPoolMySQL {
         dataStack.push(data);
     }
 
-    static DoublyLinkedList getDataList() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public static DoublyLinkedList getDataList() {
+        return dataList;
     }
 
     public void setRegistrarArchivo(String user, String cel, String pass, String pass1) {
@@ -45,7 +44,7 @@ public class ConnectionPoolMySQL {
                 pw.println("Pass1: " + pass1);
             }
 
-            JOptionPane.showMessageDialog(null, "Datos guardados al archivo!", "Información", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Datos guardados en el archivo!", "Información", JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Información: \n" + e.getMessage(), "Error!", JOptionPane.WARNING_MESSAGE);
         } finally {
@@ -93,7 +92,4 @@ public class ConnectionPoolMySQL {
             }
         }
     }
-   
-
-
 }
