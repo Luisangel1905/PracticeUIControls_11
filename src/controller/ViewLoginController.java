@@ -67,9 +67,10 @@ public class ViewLoginController implements Initializable {
     @FXML
     private Button ing;
     @FXML
-    private Button fin;
+    private Button fin0,fin,fin1,fin2,fin21;
+     
      @FXML
-    private Button fin1;
+    private Button compra;
     @FXML
     private Button cam;
     @FXML
@@ -154,6 +155,20 @@ public class ViewLoginController implements Initializable {
                         loadStage("/view/ViewLogin.fxml", event);
                     }
     }
+    @FXML
+    private void compra(ActionEvent event){
+        
+    Object evt = event.getSource();
+
+        if(evt.equals(compra)){
+                                
+       
+
+                      
+                        
+                        loadStage("/view/Viewcompra.fxml", event);
+                    }
+    }
      @FXML
     private void finc(ActionEvent event){
         
@@ -173,6 +188,35 @@ public class ViewLoginController implements Initializable {
     Object evt = event.getSource();
 
         if(evt.equals(fin1)){
+                                
+       
+
+                      
+                        
+                        loadStage("/view/ViewPrincipal.fxml", event);
+                    }
+    }
+     @FXML
+    private void finc2(ActionEvent event){
+        
+    Object evt = event.getSource();
+    if(evt.equals(fin0)){
+                                
+       
+
+                      
+                        
+                        loadStage("/view/ViewPrincipal.fxml", event);
+                    }
+ if(evt.equals(fin21)){
+                                
+       
+
+                      
+                        
+                        loadStage("/view/ViewPrincipal.fxml", event);
+                    }
+        if(evt.equals(fin2)){
                                 
        
 

@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="524.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="524.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewLoginController">
    <children>
       <ImageView fitHeight="513.0" fitWidth="576.0" layoutX="8.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/ubi.png" />
          </image>
       </ImageView>
+      <TextField layoutX="99.0" layoutY="153.0" prefHeight="41.0" prefWidth="320.0" promptText="Departamento" />
+      <TextField layoutX="102.0" layoutY="213.0" prefHeight="48.0" prefWidth="320.0" promptText="Ciudad " />
+      <TextField layoutX="99.0" layoutY="279.0" prefHeight="41.0" prefWidth="320.0" promptText="Direccion" />
+      <TextField layoutX="99.0" layoutY="340.0" prefHeight="41.0" prefWidth="320.0" promptText="Complemento Direccion" />
+      <Button fx:id="fin2" layoutX="278.0" layoutY="409.0" mnemonicParsing="false" onAction="#finc2" prefHeight="38.0" prefWidth="141.0" text="Continuar" textFill="#ff4400" />
+      <Button fx:id="fin21" layoutX="90.0" layoutY="409.0" mnemonicParsing="false" onAction="#finc2" prefHeight="38.0" prefWidth="141.0" text="Volver" textFill="#ff4400" />
    </children>
 </AnchorPane>

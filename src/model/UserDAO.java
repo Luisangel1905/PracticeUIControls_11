@@ -48,7 +48,7 @@ public boolean verificarNumeroRepetido(String numero) {
 
     boolean repetido = false;
 
-    for (int i = 0; i < dataList.getSize(); i++) {
+    for (int i = 0; i < dataList.obtenerTamaño(); i++) {
         String data = dataList.get(i);
         if (data.contains("Cel: " + numero)) {
             repetido = true;

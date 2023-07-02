@@ -13,8 +13,8 @@ public class ConnectionPoolMySQL {
     private static Stack<String> dataStack = new Stack<>();
 
     public static void addDataToList(String user, String cel, String pass, String pass1) {
-        String data = "User: " + user + ", Cel: " + cel + ", Pass: " + pass + ", Pass1: " + pass1;
-        dataList.insertLast(data);
+        String dato = "User: " + user + ", Cel: " + cel + ", Pass: " + pass + ", Pass1: " + pass1;
+        dataList.insertarUltimo(dato);
     }
 
     public static void addDataToStack(String user, String cel, String pass, String pass1) {

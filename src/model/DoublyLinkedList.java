@@ -9,66 +9,68 @@ package model;
  * @author Usuario
  */
 class DoublyLinkedList {
-    Node head;
-    private Node tail;
-    private int size;
+   Nodo cabeza;
+    private Nodo cola;
+    private int tamaño;
+
+    String obtener(int i) {
+        throw new UnsupportedOperationException("No soportado aún.");
+    }
 
     String get(int i) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    private class Node {
-        private String data;
-        private Node prev;
-        private Node next;
+    private class Nodo {
+        private String datos;
+        private Nodo anterior;
+        private Nodo siguiente;
 
-        public Node(String data) {
-            this.data = data;
-            this.prev = null;
-            this.next = null;
+        public Nodo(String datos) {
+            this.datos = datos;
+            this.anterior = null;
+            this.siguiente = null;
         }
     }
 
-    public void insertLast(String data) {
-        Node newNode = new Node(data);
+    public void insertarUltimo(String datos) {
+        Nodo nuevoNodo = new Nodo(datos);
 
-        if (isEmpty()) {
-            head = newNode;
-            tail = newNode;
+        if (estaVacia()) {
+            cabeza = nuevoNodo;
+            cola = nuevoNodo;
         } else {
-            tail.next = newNode;
-            newNode.prev = tail;
-            tail = newNode;
+            cola.siguiente = nuevoNodo;
+            nuevoNodo.anterior = cola;
+            cola = nuevoNodo;
         }
 
-        size++;
+        tamaño++;
     }
 
-    public void displayForward() {
-        Node current = head;
+    public void mostrarAdelante() {
+        Nodo actual = cabeza;
 
-        while (current != null) {
-            System.out.println(current.data);
-            current = current.next;
-        }
-    }
-
-    public void displayBackward() {
-        Node current = tail;
-
-        while (current != null) {
-            System.out.println(current.data);
-            current = current.prev;
+        while (actual != null) {
+            System.out.println(actual.datos);
+            actual = actual.siguiente;
         }
     }
 
-    public int getSize() {
-        return size;
+    public void mostrarAtras() {
+        Nodo actual = cola;
+
+        while (actual != null) {
+            System.out.println(actual.datos);
+            actual = actual.anterior;
+        }
     }
 
-    public boolean isEmpty() {
-        return size == 0;
+    public int obtenerTamaño() {
+        return tamaño;
+    }
+
+    public boolean estaVacia() {
+        return tamaño == 0;
     }
 }
-
-
