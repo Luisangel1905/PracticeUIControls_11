@@ -41,33 +41,17 @@ public class ViewLoginController implements Initializable {
     private UserDAO model = new UserDAO();
     
     @FXML
-    private TextField txtUser;
-      @FXML
-    private TextField  tex1;
-                @FXML
-    private TextField tex2;
-              @FXML
-    private TextField tex3;
-              @FXML
-    private TextField tex4;
-     
+    private TextField txtUser,txtUser1,txtUser1_;
     @FXML
-    private TextField txtUser1;
-        
+    private TextField  tex1,tex2,tex3,tex4;
     @FXML
-    private TextField txtUser1_;
-    @FXML
-    private PasswordField txtPassword;
-    @FXML
-    private PasswordField txtPassword1;
-    @FXML
-    private PasswordField txtPassword1_;
+    private PasswordField txtPassword,txtPassword1,txtPassword1_;
     @FXML
     private Button btnLogin;
     @FXML
     private Button ing;
     @FXML
-    private Button fin0,fin,fin1,fin2,fin21,domi,pago,targe;
+    private Button fin0,fin,fin1,fin2,fin21,domi,pago,targe,exic;
      
      @FXML
     private Button compra;
@@ -200,6 +184,14 @@ public class ViewLoginController implements Initializable {
     private void finc2(ActionEvent event){
         
     Object evt = event.getSource();
+    if(evt.equals(exic)){
+                                
+       
+
+                      
+                        
+                        loadStage("/view/Viewexic.fxml", event);
+                    }
     if(evt.equals(targe)){
                                 
        

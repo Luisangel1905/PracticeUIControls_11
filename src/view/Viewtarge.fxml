@@ -19,7 +19,7 @@
       <TextField layoutX="52.0" layoutY="419.0" prefHeight="25.0" prefWidth="182.0" />
       <TextField layoutX="51.0" layoutY="320.0" prefHeight="25.0" prefWidth="150.0" />
       <TextField layoutX="52.0" layoutY="368.0" prefHeight="31.0" prefWidth="72.0" />
-      <Button layoutX="175.0" layoutY="485.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Confirmar compra" textFill="RED" />
+      <Button fx:id="exic" layoutX="175.0" layoutY="485.0" mnemonicParsing="false" onAction="#finc2" prefHeight="25.0" prefWidth="150.0" text="Confirmar compra" textFill="RED" />
       <Button layoutX="118.0" layoutY="485.0" mnemonicParsing="false" text="Atras" textFill="RED" />
     
    </children>
