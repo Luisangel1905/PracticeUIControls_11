@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="514.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewLoginController">
+   <children>
+      <ImageView fitHeight="541.0" fitWidth="650.0" layoutX="-1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/pago.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="358.0" layoutY="323.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="106.0" text="Atras" textFill="#ff5906" />
+      <Button layoutX="136.0" layoutY="210.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="226.0" text="Pagar en efectivo con Efecty" textFill="#ff5906" />
+      <Button fx:id="targe" layoutX="136.0" layoutY="144.0" mnemonicParsing="false" onAction="#finc2" prefHeight="52.0" prefWidth="226.0" text="Pagar con tarjeta de debito" textFill="#ff5906" />
+      <Button layoutX="132.0" layoutY="269.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="226.0" text="Pagar con tarjeta de debito" textFill="#ff5906" />
+   </children>
+</AnchorPane>
